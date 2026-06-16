@@ -23,11 +23,11 @@ public class ProductService {
     public Optional<Product> getProductById(Long id) {
         return productRepository.findById(id);
     }
-//
-//    public Product createProduct(Product product) {
-//        return productService.save(product);
-//    }
-//
+
+    public Product createProduct(Product product) {
+        return productRepository.save(product);
+    }
+
 //    public Optional<Product> updateProduct(Long id, Product updatedProduct) {
 //        return productService.findById(id).map(existing -> {
 //            existing.setproductName(updatedProduct.getName());
