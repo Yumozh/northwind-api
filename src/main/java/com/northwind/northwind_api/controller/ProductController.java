@@ -49,4 +49,11 @@ public class ProductController {
         List<Product> products = productService.getProductByCategoryId(categoryId);
         return ResponseEntity.ok(products);
     }
+
+    @GetMapping("/product-name/{productName}")
+    public ResponseEntity<List<Product>> getProductByName(@PathVariable String productName) {
+        List<Product> products = productService.getProductByName(productName);
+        return ResponseEntity.ok(products);
+    }
+
 }
