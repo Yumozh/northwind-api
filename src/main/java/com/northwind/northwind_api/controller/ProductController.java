@@ -41,7 +41,6 @@ public class ProductController {
         if (productService.deleteProduct(id)){
             return ResponseEntity.noContent().build();
         }
-
         return ResponseEntity.notFound().build();
     }
     @GetMapping("/category/{categoryId}")
@@ -50,7 +49,7 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
-    @GetMapping("/product-name/{productName}")
+    @GetMapping("/search/{productName}")
     public ResponseEntity<List<Product>> getProductByName(@PathVariable String productName) {
         List<Product> products = productService.getProductByName(productName);
         return ResponseEntity.ok(products);
