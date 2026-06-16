@@ -35,12 +35,12 @@ public class ProductService {
 //        });
 //    }
 //
-//    public boolean deleteArtist(Long id) {
-//        if (productService.existsById(id)) {
-//            productService.deleteById(id);
-//            return true;
-//        }
-//        return false;
-//    }
+    public boolean deleteProduct(Long id) {
+        if (productRepository.existsById(id)) {
+            productRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
 
