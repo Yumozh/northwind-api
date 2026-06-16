@@ -12,20 +12,28 @@ public class Product {
 
     @Column(name = "ProductName")
     private String productName;
+
     @Column(name = "SupplierID")
     private Integer supplierId;
+
     @Column(name = "CategoryID")
     private Integer categoryId;
+
     @Column(name = "QuantityPerUnit")
     private String quantityPerUnit;
+
     @Column(name = "UnitPrice")
     private float unitPrice;
+
     @Column(name = "UnitsInStock")
     private int unitsInStock;
+
     @Column(name = "UnitsOnOrder")
     private int unitsOnOrder;
+
     @Column(name = "ReorderLevel")
     private int reorderLevel;
+
     @Column(name = "Discontinued")
     private byte discontinued;
 
