@@ -28,19 +28,16 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-//    public Optional<Product> updateProduct(Long id, Product updatedProduct) {
-//        return productService.findById(id).map(existing -> {
-//            existing.setproductName(updatedProduct.getName());
-//            return productService.save(existing);
-//        });
-//    }
-//
     public boolean deleteProduct(Long id) {
         if (productRepository.existsById(id)) {
             productRepository.deleteById(id);
             return true;
         }
         return false;
+    }
+
+    public List<Product> getProductByCategoryId(Long categoryId){
+        return productRepository.findByCategoryId(categoryId);
     }
 }
 

@@ -8,8 +8,7 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    List<Product> getProductById(Long id);
+    List<Product> findByCategoryId(Long categoryId);
     List<Product> findByProductNameContainingIgnoreCase(String name);
-//    Product createProduct(Product product);
 }
 
