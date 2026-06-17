@@ -54,5 +54,11 @@ public class ProductController {
         List<Product> products = productService.getProductByName(productName);
         return ResponseEntity.ok(products);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product) {
+        return productService.updateProduct(id, product)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 
 }

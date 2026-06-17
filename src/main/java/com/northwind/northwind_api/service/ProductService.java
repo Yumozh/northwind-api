@@ -43,5 +43,21 @@ public class ProductService {
     public List<Product> getProductByName(String productName){
         return productRepository.findByProductNameContainingIgnoreCase(productName);
     }
-}
+
+    public Optional<Product> updateProduct(Long id, Product product){
+        return productRepository.findById(id).map(existing -> {
+                existing.setCategory(product.getCategory());
+                existing.setProductName(product.getProductName());
+                existing.setCategoryId(product.getCategoryId());
+                existing.setDiscontinued(product.getDiscontinued());
+                existing.setQuantityPerUnit(product.getQuantityPerUnit());
+                existing.setSupplierId(product.getSupplierId());
+                existing.setUnitPrice(product.getUnitPrice());
+                existing.setReorderLevel(product.getReorderLevel());
+                existing.setUnitsOnOrder(product.getUnitsOnOrder());
+                existing.setUnitsInStock(product.getUnitsInStock());
+                return productRepository.save(existing);
+            });
+        }
+    }
 
