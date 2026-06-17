@@ -37,6 +37,17 @@ public class Product {
     @Column(name = "Discontinued")
     private byte discontinued;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CategoryID", insertable = false, updatable = false)
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Long getId() {
         return id;
